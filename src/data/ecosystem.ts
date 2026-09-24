@@ -1,0 +1,404 @@
+import logoCerebiia from "@/assets/partners/cerebiia.png.asset.json";
+import logoInnguia from "@/assets/partners/innguia.png.asset.json";
+import logoKumo from "@/assets/partners/kumo.png.asset.json";
+import logoLegal3ud from "@/assets/partners/legal3ud.png.asset.json";
+import logoMotion from "@/assets/partners/motionagency.png.asset.json";
+import logoTns from "@/assets/partners/tns.png.asset.json";
+import logoVetcare from "@/assets/partners/VetCarePro.png.asset.json";
+import logoVixor from "@/assets/partners/vixor.png.asset.json";
+import type {
+  Challenge,
+  EcosystemEvent,
+  Metric,
+  Opportunity,
+  Organization,
+  Partner,
+  PodcastEpisode,
+  Project,
+  Story,
+  TalentProfile,
+  VideoItem,
+} from "./types";
+
+/**
+ * CONTENIDO PLACEHOLDER — estructura lista para CMS/API.
+ * Ninguna cifra, empresa, evento o testimonio aquí es información institucional real.
+ */
+
+export const organizations: Organization[] = [
+  {
+    id: "org-01",
+    name: "Organización demo 01",
+    slug: "organizacion-demo-01",
+    type: "Startup",
+    description: "Registro de ejemplo para validar la ficha de startup del directorio.",
+    longDescription:
+      "Espacio reservado para la descripción extendida que será administrada desde el CMS. Incluye propuesta de valor, equipo, trayectoria y vínculos con otros actores del ecosistema.",
+    sectors: ["Software", "IA"],
+    services: ["Desarrollo de software", "IA"],
+    technologies: ["AI", "Cloud"],
+    city: "Cúcuta",
+    stage: "Seed",
+    website: "#",
+    latitude: 7.8891,
+    longitude: -72.4967,
+    verified: true,
+    featured: true,
+    placeholder: true,
+    connections: ["org-04", "org-06"],
+  },
+  {
+    id: "org-02",
+    name: "Organización demo 02",
+    slug: "organizacion-demo-02",
+    type: "Empresa",
+    description: "Registro de ejemplo para una empresa establecida del ecosistema.",
+    sectors: ["Industria", "Logística"],
+    services: ["Transformación digital", "Consultoría"],
+    technologies: ["Data", "IoT"],
+    city: "Los Patios",
+    website: "#",
+    latitude: 7.834,
+    longitude: -72.5064,
+    verified: true,
+    featured: true,
+    placeholder: true,
+    connections: ["org-05"],
+  },
+  {
+    id: "org-03",
+    name: "Organización demo 03",
+    slug: "organizacion-demo-03",
+    type: "Universidad",
+    description: "Registro de ejemplo para institución de educación superior.",
+    sectors: ["Educación", "Tecnología"],
+    services: ["Formación", "Investigación"],
+    technologies: ["Data", "Robótica"],
+    city: "Pamplona",
+    latitude: 7.3753,
+    longitude: -72.6486,
+    verified: true,
+    featured: false,
+    placeholder: true,
+    connections: ["org-01", "org-06"],
+  },
+  {
+    id: "org-04",
+    name: "Organización demo 04",
+    slug: "organizacion-demo-04",
+    type: "Inversionista",
+    description: "Registro de ejemplo para un vehículo de inversión regional.",
+    sectors: ["Fintech", "Servicios"],
+    services: ["Inversión", "Aceleración"],
+    technologies: ["Data"],
+    city: "Cúcuta",
+    latitude: 7.9075,
+    longitude: -72.5047,
+    verified: false,
+    featured: true,
+    placeholder: true,
+  },
+  {
+    id: "org-05",
+    name: "Organización demo 05",
+    slug: "organizacion-demo-05",
+    type: "Coworking",
+    description: "Registro de ejemplo para un espacio de trabajo colaborativo.",
+    sectors: ["Servicios", "Creatividad"],
+    services: ["Incubación", "Formación"],
+    technologies: ["Cloud"],
+    city: "Cúcuta",
+    latitude: 7.8836,
+    longitude: -72.502,
+    verified: false,
+    featured: false,
+    placeholder: true,
+  },
+  {
+    id: "org-06",
+    name: "Organización demo 06",
+    slug: "organizacion-demo-06",
+    type: "Centro de investigación",
+    description: "Registro de ejemplo para un centro de investigación aplicada.",
+    sectors: ["AgTech", "Agro"],
+    services: ["Investigación", "Consultoría"],
+    technologies: ["IoT", "Biotech"],
+    city: "Ocaña",
+    latitude: 8.2372,
+    longitude: -73.3568,
+    verified: true,
+    featured: false,
+    placeholder: true,
+    connections: ["org-03"],
+  },
+  {
+    id: "org-07",
+    name: "Organización demo 07",
+    slug: "organizacion-demo-07",
+    type: "Comunidad",
+    description: "Registro de ejemplo para una comunidad tecnológica local.",
+    sectors: ["Tecnología", "Educación"],
+    services: ["Formación"],
+    technologies: ["AI", "Cloud"],
+    city: "Villa del Rosario",
+    latitude: 7.8339,
+    longitude: -72.4741,
+    verified: false,
+    featured: false,
+    placeholder: true,
+  },
+  {
+    id: "org-08",
+    name: "Organización demo 08",
+    slug: "organizacion-demo-08",
+    type: "Startup",
+    description: "Registro de ejemplo para startup en etapa temprana.",
+    sectors: ["HealthTech", "Salud"],
+    services: ["Desarrollo de software"],
+    technologies: ["AI", "Cloud"],
+    city: "Cúcuta",
+    stage: "Pre-seed",
+    latitude: 7.8967,
+    longitude: -72.4899,
+    verified: false,
+    featured: false,
+    placeholder: true,
+  },
+  {
+    id: "org-09",
+    name: "Organización demo 09",
+    slug: "organizacion-demo-09",
+    type: "Institución",
+    description: "Registro de ejemplo para entidad pública o gremio.",
+    sectors: ["GovTech", "Servicios"],
+    services: ["Consultoría", "Formación"],
+    technologies: ["Data"],
+    city: "Cúcuta",
+    latitude: 7.9,
+    longitude: -72.51,
+    verified: true,
+    featured: false,
+    placeholder: true,
+  },
+  {
+    id: "org-10",
+    name: "Organización demo 10",
+    slug: "organizacion-demo-10",
+    type: "Startup",
+    description: "Registro de ejemplo para startup de tecnología agrícola.",
+    sectors: ["AgTech", "Agro"],
+    services: ["IA", "Desarrollo de software"],
+    technologies: ["IoT", "AI"],
+    city: "Tibú",
+    stage: "Early stage",
+    latitude: 8.6394,
+    longitude: -72.7358,
+    verified: false,
+    featured: true,
+    placeholder: true,
+  },
+  {
+    id: "org-11",
+    name: "Organización demo 11",
+    slug: "organizacion-demo-11",
+    type: "Empresa",
+    description: "Registro de ejemplo para empresa de servicios tecnológicos.",
+    sectors: ["Software", "Comercio"],
+    services: ["Desarrollo de software", "Marketing"],
+    technologies: ["Cloud", "Data"],
+    city: "Ocaña",
+    latitude: 8.2469,
+    longitude: -73.3561,
+    verified: false,
+    featured: false,
+    placeholder: true,
+  },
+  {
+    id: "org-12",
+    name: "Organización demo 12",
+    slug: "organizacion-demo-12",
+    type: "Organización",
+    description: "Registro de ejemplo para organización de apoyo al emprendimiento.",
+    sectors: ["Servicios", "Educación"],
+    services: ["Aceleración", "Incubación"],
+    technologies: ["Data"],
+    city: "Chinácota",
+    latitude: 7.6072,
+    longitude: -72.5992,
+    verified: false,
+    featured: false,
+    placeholder: true,
+  },
+];
+
+export const talent: TalentProfile[] = [
+  { id: "t-1", slug: "perfil-demo-1", role: "Perfil demo 1", specialty: "Desarrollo", city: "Cúcuta", skills: ["React", "Node"], seniority: "Semi senior", placeholder: true },
+  { id: "t-2", slug: "perfil-demo-2", role: "Perfil demo 2", specialty: "Datos", city: "Ocaña", skills: ["Python", "SQL"], seniority: "Senior", placeholder: true },
+  { id: "t-3", slug: "perfil-demo-3", role: "Perfil demo 3", specialty: "IA", city: "Pamplona", skills: ["ML", "NLP"], seniority: "Junior", placeholder: true },
+  { id: "t-4", slug: "perfil-demo-4", role: "Perfil demo 4", specialty: "Diseño", city: "Los Patios", skills: ["UX", "UI"], seniority: "Semi senior", placeholder: true },
+  { id: "t-5", slug: "perfil-demo-5", role: "Perfil demo 5", specialty: "Marketing", city: "Cúcuta", skills: ["Growth"], seniority: "Senior", placeholder: true },
+  { id: "t-6", slug: "perfil-demo-6", role: "Perfil demo 6", specialty: "Investigación", city: "Pamplona", skills: ["I+D"], seniority: "Senior", placeholder: true },
+];
+
+export const events: EcosystemEvent[] = [
+  {
+    id: "ev-1",
+    slug: "evento-demo-1",
+    title: "Evento demo 01",
+    date: "2026-10-08",
+    time: "08:00",
+    city: "Cúcuta",
+    venue: "Sede por confirmar",
+    organizer: "Distrito Nortech",
+    category: "Tecnología",
+    description: "Registro de ejemplo de la agenda. El contenido real se cargará desde el CMS.",
+    speakers: ["Speaker por confirmar"],
+    placeholder: true,
+  },
+  {
+    id: "ev-2",
+    slug: "evento-demo-2",
+    title: "Evento demo 02",
+    date: "2026-10-22",
+    time: "17:00",
+    city: "Ocaña",
+    venue: "Sede por confirmar",
+    organizer: "Aliado por confirmar",
+    category: "Emprendimiento",
+    description: "Registro de ejemplo de la agenda regional.",
+    speakers: ["Speaker por confirmar"],
+    placeholder: true,
+  },
+  {
+    id: "ev-3",
+    slug: "evento-demo-3",
+    title: "Evento demo 03",
+    date: "2026-11-05",
+    time: "09:00",
+    city: "Pamplona",
+    venue: "Sede por confirmar",
+    organizer: "Aliado por confirmar",
+    category: "Innovación",
+    description: "Registro de ejemplo para una jornada de innovación abierta.",
+    speakers: ["Speaker por confirmar"],
+    placeholder: true,
+  },
+  {
+    id: "ev-4",
+    slug: "evento-demo-4",
+    title: "Evento demo 04",
+    date: "2026-11-19",
+    time: "18:30",
+    city: "Cúcuta",
+    venue: "Sede por confirmar",
+    organizer: "Comunidad por confirmar",
+    category: "Networking",
+    description: "Registro de ejemplo para encuentro de comunidad.",
+    speakers: [],
+    placeholder: true,
+  },
+];
+
+export const opportunities: Opportunity[] = [
+  { id: "op-1", slug: "oportunidad-demo-1", title: "Convocatoria demo 01", organization: "Entidad por confirmar", category: "Convocatorias", audience: ["Startup"], deadline: "2026-10-30", location: "Norte de Santander", status: "Abierta", description: "Registro de ejemplo de convocatoria.", placeholder: true },
+  { id: "op-2", slug: "oportunidad-demo-2", title: "Vacante demo 01", organization: "Empresa por confirmar", category: "Empleo", audience: ["Talento"], deadline: "2026-10-15", location: "Cúcuta", status: "Abierta", description: "Registro de ejemplo de oferta laboral tech.", placeholder: true },
+  { id: "op-3", slug: "oportunidad-demo-3", title: "Programa demo 01", organization: "Aliado por confirmar", category: "Programas", audience: ["Empresa"], deadline: "2026-11-12", location: "Regional", status: "Próximamente", description: "Registro de ejemplo de programa de acompañamiento.", placeholder: true },
+  { id: "op-4", slug: "oportunidad-demo-4", title: "Inversión demo 01", organization: "Fondo por confirmar", category: "Inversión", audience: ["Startup"], deadline: "2026-12-01", location: "Nacional", status: "Abierta", description: "Registro de ejemplo de instrumento de inversión.", placeholder: true },
+  { id: "op-5", slug: "oportunidad-demo-5", title: "Formación demo 01", organization: "Universidad por confirmar", category: "Formación", audience: ["Talento"], deadline: "2026-09-30", location: "Pamplona", status: "Cerrada", description: "Registro de ejemplo de ruta formativa.", placeholder: true },
+  { id: "op-6", slug: "oportunidad-demo-6", title: "Evento demo 01", organization: "Distrito Nortech", category: "Eventos", audience: ["Ecosistema"], deadline: "2026-10-08", location: "Cúcuta", status: "Abierta", description: "Registro de ejemplo enlazado con la agenda.", placeholder: true },
+];
+
+export const challenges: Challenge[] = [
+  { id: "ch-1", slug: "reto-demo-agro", title: "Reto demo — Agro", area: "Agro", problem: "Descripción del problema pendiente de validación con la entidad responsable.", context: "Contexto territorial pendiente.", data: "Datos oficiales pendientes de fuente verificable.", objective: "Objetivo del reto pendiente.", owner: "Entidad por confirmar", deadline: "2026-11-30", status: "Abierto", solutionsReceived: 0, placeholder: true },
+  { id: "ch-2", slug: "reto-demo-salud", title: "Reto demo — Salud", area: "Salud", problem: "Descripción del problema pendiente.", context: "Contexto pendiente.", data: "Datos pendientes.", objective: "Objetivo pendiente.", owner: "Entidad por confirmar", deadline: "2026-12-15", status: "Abierto", solutionsReceived: 0, placeholder: true },
+  { id: "ch-3", slug: "reto-demo-logistica", title: "Reto demo — Logística", area: "Logística", problem: "Descripción del problema pendiente.", context: "Contexto pendiente.", data: "Datos pendientes.", objective: "Objetivo pendiente.", owner: "Entidad por confirmar", deadline: "2026-10-20", status: "En evaluación", solutionsReceived: 0, placeholder: true },
+  { id: "ch-4", slug: "reto-demo-frontera", title: "Reto demo — Frontera", area: "Frontera", problem: "Descripción del problema pendiente.", context: "Contexto pendiente.", data: "Datos pendientes.", objective: "Objetivo pendiente.", owner: "Entidad por confirmar", deadline: "2027-01-31", status: "Abierto", solutionsReceived: 0, placeholder: true },
+];
+
+export const episodes: PodcastEpisode[] = [
+  {
+    id: "ep-1",
+    slug: "episodio-demo-1",
+    number: 1,
+    title: "Episodio demo 01 — Voces del NorTech",
+    guest: "Invitado por confirmar",
+    role: "Rol por confirmar",
+    date: "2026-08-20",
+    duration: "00:00",
+    description:
+      "Ficha de ejemplo del episodio. El contenido real de Voces del NorTech se conectará desde YouTube y Spotify mediante el CMS.",
+    tags: ["Emprendimiento", "Región"],
+    chapters: [
+      { time: "00:00", label: "Introducción" },
+      { time: "00:00", label: "Capítulo pendiente" },
+    ],
+    placeholder: true,
+  },
+  { id: "ep-2", slug: "episodio-demo-2", number: 2, title: "Episodio demo 02", guest: "Invitado por confirmar", role: "Rol por confirmar", date: "2026-08-06", duration: "00:00", description: "Ficha de ejemplo del episodio.", tags: ["Tecnología"], placeholder: true },
+  { id: "ep-3", slug: "episodio-demo-3", number: 3, title: "Episodio demo 03", guest: "Invitado por confirmar", role: "Rol por confirmar", date: "2026-07-23", duration: "00:00", description: "Ficha de ejemplo del episodio.", tags: ["Liderazgo", "Empresas"], placeholder: true },
+  { id: "ep-4", slug: "episodio-demo-4", number: 4, title: "Episodio demo 04", guest: "Invitado por confirmar", role: "Rol por confirmar", date: "2026-07-09", duration: "00:00", description: "Ficha de ejemplo del episodio.", tags: ["Innovación"], placeholder: true },
+  { id: "ep-5", slug: "episodio-demo-5", number: 5, title: "Episodio demo 05", guest: "Invitado por confirmar", role: "Rol por confirmar", date: "2026-06-25", duration: "00:00", description: "Ficha de ejemplo del episodio.", tags: ["Educación", "Política pública"], placeholder: true },
+  { id: "ep-6", slug: "episodio-demo-6", number: 6, title: "Episodio demo 06", guest: "Invitado por confirmar", role: "Rol por confirmar", date: "2026-06-11", duration: "00:00", description: "Ficha de ejemplo del episodio.", tags: ["Cultura", "Sostenibilidad"], placeholder: true },
+];
+
+export const videos: VideoItem[] = [
+  { id: "v-1", slug: "video-demo-1", title: "Video demo 01", category: "Podcast", source: "YouTube", duration: "00:00", date: "2026-08-20", placeholder: true },
+  { id: "v-2", slug: "video-demo-2", title: "Video demo 02", category: "Entrevistas", source: "YouTube", duration: "00:00", date: "2026-08-02", placeholder: true },
+  { id: "v-3", slug: "video-demo-3", title: "Video demo 03", category: "Eventos", source: "Instagram", duration: "00:00", date: "2026-07-18", placeholder: true },
+  { id: "v-4", slug: "video-demo-4", title: "Video demo 04", category: "Tecnología", source: "TikTok", duration: "00:00", date: "2026-07-01", placeholder: true },
+  { id: "v-5", slug: "video-demo-5", title: "Video demo 05", category: "Emprendimiento", source: "Facebook", duration: "00:00", date: "2026-06-14", placeholder: true },
+  { id: "v-6", slug: "video-demo-6", title: "Video demo 06", category: "Innovación", source: "Spotify", duration: "00:00", date: "2026-06-02", placeholder: true },
+];
+
+export const stories: Story[] = [
+  { id: "s-1", slug: "historia-demo-1", title: "Historia demo 01", category: "Startups", excerpt: "Resumen de ejemplo para una historia del ecosistema.", author: "Redacción Distrito Nortech", date: "2026-08-12", readingTime: "5 min", placeholder: true },
+  { id: "s-2", slug: "historia-demo-2", title: "Historia demo 02", category: "Talento regional", excerpt: "Resumen de ejemplo de un perfil de talento regional.", author: "Redacción Distrito Nortech", date: "2026-07-28", readingTime: "4 min", placeholder: true },
+  { id: "s-3", slug: "historia-demo-3", title: "Historia demo 03", category: "Transformación empresarial", excerpt: "Resumen de ejemplo de un caso de transformación.", author: "Redacción Distrito Nortech", date: "2026-07-05", readingTime: "6 min", placeholder: true },
+  { id: "s-4", slug: "historia-demo-4", title: "Historia demo 04", category: "Innovación y territorio", excerpt: "Resumen de ejemplo de un proyecto con impacto territorial.", author: "Redacción Distrito Nortech", date: "2026-06-19", readingTime: "7 min", placeholder: true },
+];
+
+export const partners: Partner[] = [
+  { id: "p-1", name: "TNS", category: "Empresas", scope: "Regional", logo: logoTns.url },
+  { id: "p-2", name: "Cerebiia", category: "Empresas", scope: "Regional", logo: logoCerebiia.url },
+  { id: "p-3", name: "Innguia", category: "Organizaciones", scope: "Regional", logo: logoInnguia.url },
+  { id: "p-4", name: "Kumo", category: "Empresas", scope: "Regional", logo: logoKumo.url },
+  { id: "p-5", name: "Legal3UD", category: "Organizaciones", scope: "Regional", logo: logoLegal3ud.url },
+  { id: "p-6", name: "Motion Agency", category: "Empresas", scope: "Regional", logo: logoMotion.url },
+  { id: "p-7", name: "VetCare Pro", category: "Empresas", scope: "Regional", logo: logoVetcare.url },
+  { id: "p-8", name: "Vixor", category: "Empresas", scope: "Regional", logo: logoVixor.url },
+];
+
+export const projects: Project[] = [
+  { id: "pr-1", slug: "proyecto-demo-1", title: "Proyecto demo 01", area: "Ciencia y tecnología", status: "En ejecución", organizations: ["Organización demo 03"], description: "Ficha de ejemplo de proyecto de I+D+i.", placeholder: true },
+  { id: "pr-2", slug: "proyecto-demo-2", title: "Proyecto demo 02", area: "Innovación abierta", status: "En formulación", organizations: ["Organización demo 02"], description: "Ficha de ejemplo de proyecto de innovación abierta.", placeholder: true },
+  { id: "pr-3", slug: "proyecto-demo-3", title: "Proyecto demo 03", area: "Transferencia tecnológica", status: "En ejecución", organizations: ["Organización demo 06"], description: "Ficha de ejemplo de transferencia tecnológica.", placeholder: true },
+];
+
+export const metrics: Metric[] = [
+  { key: "startups", label: "Startups", value: null, note: "Dato pendiente de verificación" },
+  { key: "empresas", label: "Empresas", value: null, note: "Dato pendiente de verificación" },
+  { key: "talento", label: "Profesionales / talento", value: null, note: "Dato pendiente de verificación" },
+  { key: "organizaciones", label: "Organizaciones", value: null, note: "Dato pendiente de verificación" },
+  { key: "proyectos", label: "Proyectos", value: null, note: "Dato pendiente de verificación" },
+  { key: "eventos", label: "Eventos", value: null, note: "Dato pendiente de verificación" },
+];
+
+export const getOrganization = (slug: string) =>
+  organizations.find((o) => o.slug === slug);
+
+export const startups = organizations.filter((o) => o.type === "Startup");
+export const companies = organizations.filter((o) => o.type === "Empresa");
+
+export const news: Story[] = [
+  { id: "n-1", slug: "noticia-demo-1", title: "Noticia demo 01", category: "Ecosistema", excerpt: "Registro de ejemplo para una noticia del ecosistema regional.", author: "Redacción Distrito Nortech", date: "2026-09-01", readingTime: "3 min", placeholder: true },
+  { id: "n-2", slug: "noticia-demo-2", title: "Noticia demo 02", category: "Innovación", excerpt: "Registro de ejemplo pendiente de verificación editorial.", author: "Redacción Distrito Nortech", date: "2026-08-24", readingTime: "2 min", placeholder: true },
+  { id: "n-3", slug: "noticia-demo-3", title: "Noticia demo 03", category: "Convocatorias", excerpt: "Registro de ejemplo enlazado con oportunidades abiertas.", author: "Redacción Distrito Nortech", date: "2026-08-15", readingTime: "4 min", placeholder: true },
+  { id: "n-4", slug: "noticia-demo-4", title: "Noticia demo 04", category: "Talento", excerpt: "Registro de ejemplo sobre talento y formación regional.", author: "Redacción Distrito Nortech", date: "2026-08-03", readingTime: "3 min", placeholder: true },
+];
+
+export const academia = organizations.filter(
+  (o) => o.type === "Universidad" || o.type === "Centro de investigación",
+);
+export const institutions = organizations.filter(
+  (o) => o.type === "Institución" || o.type === "Organización" || o.type === "Comunidad",
+);
