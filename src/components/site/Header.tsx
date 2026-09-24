@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.png.asset.json";
+import { siteLogo } from "@/lib/asset-paths";
 import { GlobalSearch } from "./GlobalSearch";
 import { NAV } from "./nav-config";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -32,7 +32,7 @@ export function Header() {
           aria-label="Distrito Nortech — Inicio"
         >
           <img
-            src={logo.url}
+            src={siteLogo}
             alt="Distrito Nortech"
             className="h-8 w-auto max-w-[9rem] object-contain invert sm:h-9 md:h-10"
             width={120}

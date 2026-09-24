@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.png.asset.json";
+import { siteLogo } from "@/lib/asset-paths";
 import { FOOTER_COLUMNS, SOCIALS } from "./nav-config";
 
 export function Footer() {
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container-nt relative py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
-            <img src={logo.url} alt="Distrito Nortech" className="h-11 w-auto invert" width={140} height={44} />
+            <img src={siteLogo} alt="Distrito Nortech" className="h-11 w-auto invert" width={140} height={44} />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink-muted">
               Conectamos lo que Norte de Santander tiene con lo que Norte de Santander necesita
               para crecer.

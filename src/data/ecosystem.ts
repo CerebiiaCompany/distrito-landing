@@ -1,11 +1,4 @@
-import logoCerebiia from "@/assets/partners/cerebiia.png.asset.json";
-import logoInnguia from "@/assets/partners/innguia.png.asset.json";
-import logoKumo from "@/assets/partners/kumo.png.asset.json";
-import logoLegal3ud from "@/assets/partners/legal3ud.png.asset.json";
-import logoMotion from "@/assets/partners/motionagency.png.asset.json";
-import logoTns from "@/assets/partners/tns.png.asset.json";
-import logoVetcare from "@/assets/partners/VetCarePro.png.asset.json";
-import logoVixor from "@/assets/partners/vixor.png.asset.json";
+import { partnerLogos } from "@/lib/asset-paths";
 import type {
   Challenge,
   EcosystemEvent,
@@ -358,14 +351,14 @@ export const stories: Story[] = [
 ];
 
 export const partners: Partner[] = [
-  { id: "p-1", name: "TNS", category: "Empresas", scope: "Regional", logo: logoTns.url },
-  { id: "p-2", name: "Cerebiia", category: "Empresas", scope: "Regional", logo: logoCerebiia.url },
-  { id: "p-3", name: "Innguia", category: "Organizaciones", scope: "Regional", logo: logoInnguia.url },
-  { id: "p-4", name: "Kumo", category: "Empresas", scope: "Regional", logo: logoKumo.url },
-  { id: "p-5", name: "Legal3UD", category: "Organizaciones", scope: "Regional", logo: logoLegal3ud.url },
-  { id: "p-6", name: "Motion Agency", category: "Empresas", scope: "Regional", logo: logoMotion.url },
-  { id: "p-7", name: "VetCare Pro", category: "Empresas", scope: "Regional", logo: logoVetcare.url },
-  { id: "p-8", name: "Vixor", category: "Empresas", scope: "Regional", logo: logoVixor.url },
+  { id: "p-1", name: "TNS", category: "Empresas", scope: "Regional", logo: partnerLogos.tns },
+  { id: "p-2", name: "Cerebiia", category: "Empresas", scope: "Regional", logo: partnerLogos.cerebiia },
+  { id: "p-3", name: "Innguia", category: "Organizaciones", scope: "Regional", logo: partnerLogos.innguia },
+  { id: "p-4", name: "Kumo", category: "Empresas", scope: "Regional", logo: partnerLogos.kumo },
+  { id: "p-5", name: "Legal3UD", category: "Organizaciones", scope: "Regional", logo: partnerLogos.legal3ud },
+  { id: "p-6", name: "Motion Agency", category: "Empresas", scope: "Regional", logo: partnerLogos.motionagency },
+  { id: "p-7", name: "VetCare Pro", category: "Empresas", scope: "Regional", logo: partnerLogos.vetcarepro },
+  { id: "p-8", name: "Vixor", category: "Empresas", scope: "Regional", logo: partnerLogos.vixor },
 ];
 
 export const projects: Project[] = [
