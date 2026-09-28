@@ -49,12 +49,14 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  media,
   children,
 }: {
   breadcrumb: string;
   eyebrow?: string;
   title: string;
   description?: string;
+  media?: ReactNode;
   children?: ReactNode;
 }) {
   return (
@@ -73,13 +75,25 @@ export function PageHero({
           <span className="mx-2 opacity-50">/</span>
           <span className="text-ink-foreground">{breadcrumb}</span>
         </nav>
-        {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-        <h1 className="mt-4 max-w-4xl text-3xl leading-[1.06] font-semibold text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          {title}
-        </h1>
-        {description ? (
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">{description}</p>
-        ) : null}
+        <div className={cn(media && "grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]")}>
+          <div>
+            {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+            <h1
+              className={cn(
+                "mt-4 max-w-4xl text-3xl leading-[1.06] font-semibold text-balance sm:text-4xl md:text-5xl lg:text-6xl",
+                media && "lg:max-w-3xl",
+              )}
+            >
+              {title}
+            </h1>
+            {description ? (
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
+                {description}
+              </p>
+            ) : null}
+          </div>
+          {media ? <div className="flex justify-center lg:justify-end">{media}</div> : null}
+        </div>
         {children ? <div className="mt-8">{children}</div> : null}
       </div>
     </header>

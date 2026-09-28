@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CTAStrip, PageHero, Section, SectionHeading } from "@/components/site/primitives";
+import diorama from "@/assets/Diorama Cúcuta.png";
 
 export const Route = createFileRoute("/nosotros")({
   head: () => ({
@@ -32,6 +33,15 @@ function NosotrosPage() {
         eyebrow="Distrito Nortech"
         title="Somos la red que conecta al ecosistema del nororiente."
         description="Un espacio común para que el talento, la empresa, la academia, la inversión y las instituciones trabajen juntos."
+        media={
+          <img
+            src={diorama}
+            alt="Diorama ilustrado de Cúcuta con lugares representativos de la ciudad"
+            fetchPriority="high"
+            decoding="async"
+            className="h-auto w-full max-w-[38rem] object-contain"
+          />
+        }
       />
 
       <Section>
